@@ -1,0 +1,8 @@
+/* #heading{
+    visibility: hidden;
+} */
+
+#errormsg{
+    color: red;
+    display: none;
+}
