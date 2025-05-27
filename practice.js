@@ -122,24 +122,35 @@
 // console.log(c)
 
 const theform = document.getElementById("theform");
-const errorMessageElement = document.getElementById("errormsg");
+const errorMessage= document.getElementById("errormsg");
 theform.addEventListener("submit",(e) => {
     e.preventDefault();
 
-  const password = document.getElementById("password").Value;
-  const confirmpassword = document.getElementById("confirmpassword").Value;
+  const password = document.getElementById("password1").value;
+  const confirmpassword = document.getElementById("confirmpassword").value;
 
   if (password.length < 8){
-    errorMessage = "password must be atleast 8 characters";
+    errorMessage.innerHTML = "password must be at least 8 characters";
+    errorMessage.style.display="block";
+    alert("must be at least 8 characters");
   }
-  else if(password !== confirmpassword){
-    errorMessage = "passwords do not match";
+ if(password.length==8 !== confirmpassword.length===8){
+    errorMessage.innerHTML = "not match"
+    errorMessage.style.display = "block"
+    alert("not match")
   }
-  if(errorMessage){
-    errormsg.textcontent = errorMessage
+   
+  if (password.length==8 && confirmpassword.length ==8){
+     errorMessage.style.display="block"
+     errorMessage.innerHTML="password match"
+     alert("Successful")
+     
   }
- else{ errormsg.textcontent =" ";
-    alert("submitted successfully")}
+  //  if(password!== confirmpassword){
+  //   errorMessage.innerHTML = "not match"
+  //   errorMessage.style.display = "block"
+  //   alert("not match")
+  // }
     
 });
 
